@@ -43,6 +43,21 @@ fill it in. In `index.html`, find the `<div class="project-video" data-video="">
 
 No other edits needed — `script.js` picks up whichever kind of link you used and renders the right embed.
 
+## Headgear Mechanism / Elbow Actuator cards
+
+These two cards are ProtoCall sub-components, placed right before the ProtoCall card and each ending with a
+"Used in ProtoCall →" link that jumps down to it (that link targets `id="protocall-card"` on the ProtoCall
+`<article>` — don't remove that id). Once you create their repos:
+
+1. Replace the `<span class="project-link disabled">Repo &amp; CAD files — coming soon</span>` line in each
+   card with real links, e.g.:
+   ```html
+   <a href="https://github.com/kiki101robo/headgear-mechanism" target="_blank" rel="noopener" class="project-link">GitHub →</a>
+   <a href="https://github.com/kiki101robo/headgear-mechanism/tree/main/cad" target="_blank" rel="noopener" class="project-link">CAD files →</a>
+   ```
+2. Add each repo's name to the `FEATURED_REPOS` set in `script.js` so it isn't duplicated in "All Repositories".
+3. Fill in their `data-video=""` slots with the YouTube links per the section above.
+
 ## Customizing
 
 - **Add/remove a featured project**: duplicate a `<article class="project-card">` block in `index.html`

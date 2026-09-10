@@ -9,6 +9,8 @@ const FEATURED_REPOS = new Set([
   "Spacecraft_Pressurevalve_Health",
   "Structure_From_Motion",
   "Industrial_Anomaly_Detection-on-MVtec",
+  "ProtoCALL_Head-Gear-CAD-Files-and-Video",
+  "ProtoCALL_Elbow-Actuator-CAD-Files-and-Video",
 ]);
 
 const LANG_COLORS = {
