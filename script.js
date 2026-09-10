@@ -73,10 +73,14 @@ document.getElementById("year").textContent = new Date().getFullYear();
   const gridEl = document.getElementById("repoGrid");
 
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+
     const res = await fetch(
       `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`,
-      { headers: { Accept: "application/vnd.github+json" } }
+      { headers: { Accept: "application/vnd.github+json" }, signal: controller.signal }
     );
+    clearTimeout(timeout);
 
     if (!res.ok) throw new Error(`GitHub API responded ${res.status}`);
 
@@ -117,7 +121,11 @@ document.getElementById("year").textContent = new Date().getFullYear();
       .join("");
   } catch (err) {
     statusEl.classList.add("error");
-    statusEl.innerHTML = `Couldn't load repositories automatically (GitHub API rate limit or network issue). See the full list at <a href="https://github.com/${GITHUB_USERNAME}?tab=repositories" target="_blank" rel="noopener">github.com/${GITHUB_USERNAME}</a>.`;
+    const reason =
+      err.name === "AbortError"
+        ? "the request timed out (an ad blocker or privacy extension may be blocking api.github.com)"
+        : "a GitHub API rate limit or network issue";
+    statusEl.innerHTML = `Couldn't load repositories automatically — ${reason}. See the full list at <a href="https://github.com/${GITHUB_USERNAME}?tab=repositories" target="_blank" rel="noopener">github.com/${GITHUB_USERNAME}</a>.`;
   }
 })();
 
