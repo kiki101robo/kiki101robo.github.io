@@ -5,12 +5,10 @@ const GITHUB_USERNAME = "kiki101robo";
 const FEATURED_REPOS = new Set([
   "STM32-Baremetal-Drivers",
   "Alexa_Robotic_Manipulator_Arm",
-  "Mazerunner_Bot",
-  "Spacecraft_Pressurevalve_Health",
   "Structure_From_Motion",
-  "Industrial_Anomaly_Detection-on-MVtec",
   "ProtoCALL_Neck_Band-for-Head-Gear-CAD-Files-and-Video",
   "ProtoCALL_Elbow-Actuator-CAD-Files-and-Video",
+  "stm32-baremetal-bootloader",
 ]);
 
 const LANG_COLORS = {
@@ -162,3 +160,29 @@ function escapeHtml(str) {
   div.textContent = str;
   return div.innerHTML;
 }
+
+// ---------- Mailto fallback: copy email on click ----------
+// mailto: links only open something if the visitor's OS has a default mail app configured.
+// If it doesn't, clicking silently does nothing — so also copy the address as a reliable fallback.
+(function initMailtoCopy() {
+  const mailLinks = document.querySelectorAll('a[href^="mailto:"]');
+  if (!mailLinks.length) return;
+
+  const toast = document.createElement("div");
+  toast.className = "email-toast";
+  document.body.appendChild(toast);
+  let toastTimer = null;
+
+  mailLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const email = link.getAttribute("href").replace("mailto:", "").split("?")[0];
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(email).catch(() => {});
+      }
+      toast.textContent = `Email copied — ${email}`;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2500);
+    });
+  });
+})();

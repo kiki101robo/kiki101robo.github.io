@@ -469,3 +469,27 @@ main { position: relative; z-index: 1; }
   position: relative;
   z-index: 1;
 }
+
+/* ---------- Email copy toast ---------- */
+.email-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 12px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 200;
+}
+.email-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
