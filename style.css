@@ -19,21 +19,6 @@
   --shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.5);
 }
 
-html[data-theme="light"] {
-  --bg: #f7f8fb;
-  --bg-alt: #ffffff;
-  --card: #ffffff;
-  --card-hover: #f0f2f7;
-  --border: #e3e6ee;
-  --text: #131722;
-  --text-dim: #4b5468;
-  --text-faint: #8a91a3;
-  --accent: #0f9c8c;
-  --accent-2: #0284c7;
-  --accent-soft: rgba(15, 156, 140, 0.1);
-  --shadow: 0 10px 30px -14px rgba(20, 30, 60, 0.15);
-}
-
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -98,20 +83,6 @@ a { color: inherit; text-decoration: none; }
 }
 .icon-link { color: var(--text-dim); display: flex; transition: color 0.15s ease; }
 .icon-link:hover { color: var(--accent); }
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text-dim);
-  cursor: pointer;
-}
-.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
-
 @media (max-width: 720px) {
   .nav-links { display: none; }
 }

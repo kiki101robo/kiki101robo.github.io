@@ -67,40 +67,6 @@ document.getElementById("year").textContent = new Date().getFullYear();
   }
 })();
 
-// ---------- Theme toggle ----------
-(function initTheme() {
-  const root = document.documentElement;
-  const toggle = document.getElementById("themeToggle");
-  const iconSun = document.getElementById("iconSun");
-  const iconMoon = document.getElementById("iconMoon");
-
-  let stored = null;
-  try { stored = localStorage.getItem("kk-theme"); } catch (e) { /* storage unavailable */ }
-
-  const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
-  const initial = stored || (prefersLight ? "light" : "dark");
-  applyTheme(initial);
-
-  toggle.addEventListener("click", () => {
-    const current = root.getAttribute("data-theme") === "light" ? "light" : "dark";
-    const next = current === "light" ? "dark" : "light";
-    applyTheme(next);
-    try { localStorage.setItem("kk-theme", next); } catch (e) { /* ignore */ }
-  });
-
-  function applyTheme(theme) {
-    if (theme === "light") {
-      root.setAttribute("data-theme", "light");
-      iconSun.hidden = true;
-      iconMoon.hidden = false;
-    } else {
-      root.removeAttribute("data-theme");
-      iconSun.hidden = false;
-      iconMoon.hidden = true;
-    }
-  }
-})();
-
 // ---------- Auto-pull GitHub repos ----------
 (async function loadRepos() {
   const statusEl = document.getElementById("repoStatus");
