@@ -464,3 +464,44 @@ main { position: relative; z-index: 1; }
   opacity: 1;
   transform: translate(-50%, 0);
 }
+
+/* ---------- Embedded portfolio revision ---------- */
+.project-group-title {
+  margin: 42px 0 18px;
+  color: var(--text);
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+.project-group-title:first-of-type { margin-top: 0; }
+.project-grid-priority { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.project-grid-priority .featured { grid-column: 1 / -1; }
+.firmware-card { border-color: rgba(94, 234, 212, 0.42); }
+.evidence-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+}
+.evidence-panel strong {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.evidence-panel span { color: var(--text-dim); font-size: 0.8rem; }
+.compact-grid { grid-template-columns: minmax(260px, 1fr) minmax(0, 1fr); }
+.compact-grid .project-card { grid-column: 1; }
+.all-work-link { margin: 26px 0 0; }
+.all-work-link a { color: var(--accent-2); font-weight: 600; }
+@media (max-width: 720px) {
+  .section { padding: 70px 20px; }
+  .hero { padding: 96px 20px 58px; }
+  .hero-actions .btn { justify-content: center; }
+  .project-grid-priority, .compact-grid { grid-template-columns: 1fr; }
+  .project-grid-priority .featured, .compact-grid .project-card { grid-column: auto; }
+  .contact-box { padding: 28px 20px; }
+}

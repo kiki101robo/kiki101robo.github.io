@@ -21,8 +21,7 @@
     <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#repos">Repos</a>
+      <a href="#projects">Selected Work</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions">
@@ -45,17 +44,19 @@
       <h1>Kirti Kishore</h1>
       <p class="hero-role">Research Engineer, UMD Embodied Dynamics Lab</p>
       <p class="hero-desc">
-        I build the firmware, motor control, and sensor-fusion pipelines that let robots and wearable
-        devices move, feel, and react. Currently developing <strong>ProtoCall</strong>, a wearable haptic
-        exoskeleton — accepted to <strong>UIST 2026</strong>. Open to full-time embedded/firmware roles.
+        I build embedded firmware, motor-control systems, and sensor pipelines for robots and wearable
+        devices. My work spans register-level STM32 drivers, bootloaders, real-time control, and
+        hardware-in-the-loop debugging. Open to full-time embedded firmware and robotics-controls roles.
       </p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="https://linkedin.com/in/kirti-kishore101" target="_blank" rel="noopener" class="btn btn-ghost">Get in Touch</a>
+        <a href="#projects" class="btn btn-primary">View Firmware Work</a>
+        <a href="Kirti_Kishore_Google_HW_Engineer_II.docx" class="btn btn-ghost" download>Download Resume</a>
+        <a href="mailto:kirtikishore2010@gmail.com" class="btn btn-ghost">Email Me</a>
+        <a href="https://linkedin.com/in/kirti-kishore101" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
       </div>
       <div class="hero-meta">
-        <span>📍 Washington, D.C. / College Park, MD</span>
-        <span>🎓 M.Eng Robotics, University of Maryland</span>
+        <span>Washington, D.C. / College Park, MD</span>
+        <span>M.Eng Robotics, University of Maryland</span>
       </div>
     </div>
   </section>
@@ -125,18 +126,15 @@
         <div class="tl-date">Oct 2025 — Present</div>
         <div class="tl-body">
           <h3>Research Engineer <span>· UMD Embodied Dynamics Lab</span></h3>
-          <p>Developing ProtoCall, a wearable haptic exoskeleton — firmware, BLDC motor control, IMU
-          sensor fusion, PID control loops, and capstan-drive transmission. Work accepted as a
-          second-author paper to <strong>UIST 2026</strong>.</p>
+          <p>Developing ProtoCall, a wearable haptic exoskeleton, including firmware, BLDC motor control,
+          IMU sensor fusion, PID control loops, and capstan-drive transmission.</p>
         </div>
       </li>
       <li>
         <div class="tl-date">Aug 2025 — Apr 2026</div>
         <div class="tl-body">
-          <h3>Computer Vision Engineer <span>· FairwAI (Remote)</span></h3>
-          <p>Built TensorFlow CV models for edge AI deployment on NVIDIA Jetson; developed age/ethnicity
-          estimation pipelines and optimized DeepFace/FairFace models, with MongoDB + Plotly Dash
-          fairness-auditing dashboards.</p>
+          <h3>Computer Vision Engineer <span>· FairwAI (Remote, concurrent role)</span></h3>
+          <p>Built and optimized TensorFlow computer-vision pipelines for NVIDIA Jetson edge deployment.</p>
         </div>
       </li>
       <li>
@@ -160,112 +158,86 @@
     </ol>
   </section>
 
-  <!-- FEATURED PROJECTS -->
+  <!-- SELECTED PROJECTS -->
   <section class="section" id="projects">
-    <h2 class="section-title"><span class="num">03</span> Featured Projects</h2>
-    <div class="project-grid">
+    <h2 class="section-title"><span class="num">03</span> Selected Work</h2>
+    <p class="section-sub">A focused selection of embedded firmware, controls, robotics, and perception work.</p>
 
+    <h3 class="project-group-title">Embedded firmware</h3>
+    <div class="project-grid project-grid-priority">
       <article class="project-card featured" id="protocall-card">
-        <div class="project-card-top">
-          <span class="project-tag">Research · UIST 2026</span>
-        </div>
+        <div class="project-card-top"><span class="project-tag">Wearable robotics research</span></div>
         <h3>ProtoCall</h3>
         <div class="project-video" data-video="https://youtu.be/It6SSnn11VM"></div>
-        <p>Preemptive physical feedback for sequential skill augmentation — a wearable haptic exoskeleton
-        with BLDC motor control, IMU-based closed-loop feedback, BLE communication, and capstan-drive
-        actuation delivering 6x mechanical advantage at sub-50ms latency.</p>
-        <div class="project-stack">
-          <span>Firmware</span><span>BLDC</span><span>IMU Fusion</span><span>PID</span><span>BLE</span>
-        </div>
-        <div class="project-links">
-          <span class="project-link disabled">Paper — UIST 2026 (in press)</span>
-        </div>
+        <p>Wearable haptic exoskeleton with BLDC motor control, IMU-based closed-loop feedback, BLE communication, and capstan-drive actuation.</p>
+        <div class="project-stack"><span>Firmware</span><span>BLDC</span><span>IMU Fusion</span><span>PID</span><span>BLE</span></div>
+        <div class="project-links"><a href="https://github.com/kiki101robo/ProtoCALL_Elbow-Actuator-CAD-Files-and-Video" target="_blank" rel="noopener" class="project-link">Elbow hardware →</a><a href="https://github.com/kiki101robo/ProtoCALL_Neck_Band-for-Head-Gear-CAD-Files-and-Video" target="_blank" rel="noopener" class="project-link">Headgear hardware →</a></div>
       </article>
 
-      <article class="project-card">
-        <h3>Elbow Actuator</h3>
-        <div class="project-video" data-video="https://youtu.be/xyjVXEGSH-c"></div>
-        <p>Software-controlled trigger-switch emulator for ProtoCall — uses a PhotoMOS AQV255 solid-state
-        relay to replace a mechanical switch, letting firmware actuate the trigger directly.</p>
-        <div class="project-stack"><span>PhotoMOS AQV255</span><span>Solid-State Relay</span><span>Firmware</span></div>
-        <div class="project-links">
-          <a href="https://github.com/kiki101robo/ProtoCALL_Elbow-Actuator-CAD-Files-and-Video" target="_blank" rel="noopener" class="project-link">GitHub →</a>
-          <a href="https://github.com/kiki101robo/ProtoCALL_Elbow-Actuator-CAD-Files-and-Video/tree/main/Cad%20Files" target="_blank" rel="noopener" class="project-link">CAD files →</a>
-          <a href="#protocall-card" class="project-link">Used in ProtoCall →</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <h3>Headgear Mechanism</h3>
-        <div class="project-video" data-video="https://youtu.be/wry6lRw8zSM"></div>
-        <p>Capstan-driven neckband that actuates ProtoCall's headgear as part of its preemptive feedback
-        loop — mechanical design and transmission for the neckband-to-headgear actuation.</p>
-        <div class="project-stack"><span>Fusion 360</span><span>Capstan Drive</span><span>Neckband</span></div>
-        <div class="project-links">
-          <a href="https://github.com/kiki101robo/ProtoCALL_Neck_Band-for-Head-Gear-CAD-Files-and-Video" target="_blank" rel="noopener" class="project-link">GitHub →</a>
-          <a href="https://github.com/kiki101robo/ProtoCALL_Neck_Band-for-Head-Gear-CAD-Files-and-Video/tree/main/Cad%20Files" target="_blank" rel="noopener" class="project-link">CAD files →</a>
-          <a href="#protocall-card" class="project-link">Used in ProtoCall →</a>
-        </div>
-      </article>
-
-      <article class="project-card">
+      <article class="project-card firmware-card">
+        <div class="project-card-top"><span class="project-tag">Register-level C</span></div>
         <h3>STM32 Bare-Metal Drivers</h3>
-        <div class="project-video" data-video=""></div>
-        <p>Register-level peripheral drivers for the STM32F411RE written directly against CMSIS — no
-        HAL, no LL libraries.</p>
-        <div class="project-stack"><span>C</span><span>CMSIS</span><span>Cortex-M4</span></div>
-        <div class="project-links">
-          <a href="https://github.com/kiki101robo/STM32-Baremetal-Drivers" target="_blank" rel="noopener" class="project-link">GitHub →</a>
-        </div>
+        <div class="evidence-panel"><strong>What the code demonstrates</strong><span>UART · SPI · I2C · ADC · PWM · DMA · Timers</span></div>
+        <p>Peripheral drivers for the STM32F411RE written directly against CMSIS, without HAL or LL libraries.</p>
+        <div class="project-stack"><span>C</span><span>CMSIS</span><span>STM32F411RE</span><span>Cortex-M4</span></div>
+        <div class="project-links"><a href="https://github.com/kiki101robo/STM32-Baremetal-Drivers" target="_blank" rel="noopener" class="project-link">Inspect source →</a></div>
       </article>
 
+      <article class="project-card firmware-card">
+        <div class="project-card-top"><span class="project-tag">Boot process &amp; memory</span></div>
+        <h3>STM32 Bare-Metal Bootloader</h3>
+        <div class="evidence-panel"><strong>What the code demonstrates</strong><span>Linker scripts · Memory regions · MSP handoff · Multi-slot apps</span></div>
+        <p>Custom STM32F4 bootloader with linker-script-defined regions, UART firmware selection, and jump-to-application logic.</p>
+        <div class="project-stack"><span>C</span><span>STM32F4</span><span>Bootloader</span><span>UART</span></div>
+        <div class="project-links"><a href="https://github.com/kiki101robo/stm32-baremetal-bootloader" target="_blank" rel="noopener" class="project-link">Inspect source →</a></div>
+      </article>
+    </div>
+
+    <h3 class="project-group-title">Controls &amp; robotics</h3>
+    <div class="project-grid">
       <article class="project-card">
-        <h3>Alexa Robotic Manipulator Arm</h3>
-        <div class="project-video" data-video=""></div>
-        <p>ROS2-based 5-DOF robotic arm with Amazon Alexa voice control, Gazebo simulation, and MoveIt 2
-        motion planning.</p>
-        <div class="project-stack"><span>ROS2</span><span>MoveIt 2</span><span>Gazebo</span><span>Python</span></div>
-        <div class="project-links">
-          <a href="https://github.com/kiki101robo/Alexa_Robotic_Manipulator_Arm" target="_blank" rel="noopener" class="project-link">GitHub →</a>
-        </div>
+        <h3>ProtoCall Elbow Actuator</h3>
+        <div class="project-video" data-video="https://youtu.be/xyjVXEGSH-c"></div>
+        <p>Firmware-controlled trigger-switch emulator using a PhotoMOS AQV255 solid-state relay, with CAD and a working hardware demo.</p>
+        <div class="project-stack"><span>PhotoMOS</span><span>Firmware</span><span>CAD</span></div>
+        <div class="project-links"><a href="https://github.com/kiki101robo/ProtoCALL_Elbow-Actuator-CAD-Files-and-Video" target="_blank" rel="noopener" class="project-link">GitHub &amp; demo →</a></div>
       </article>
+      <article class="project-card">
+        <h3>ProtoCall Headgear Mechanism</h3>
+        <div class="project-video" data-video="https://youtu.be/wry6lRw8zSM"></div>
+        <p>Capstan-driven neckband and headgear actuation mechanism, documented with CAD and a working hardware demo.</p>
+        <div class="project-stack"><span>Capstan Drive</span><span>Fusion 360</span><span>Mechanism Design</span></div>
+        <div class="project-links"><a href="https://github.com/kiki101robo/ProtoCALL_Neck_Band-for-Head-Gear-CAD-Files-and-Video" target="_blank" rel="noopener" class="project-link">GitHub &amp; demo →</a></div>
+      </article>
+      <article class="project-card">
+        <h3>Mazerunner Robot</h3>
+        <p>C++ robot-navigation project using LiDAR and IMU inputs for mapping, path planning, object handling, and collision avoidance.</p>
+        <div class="project-stack"><span>C++</span><span>LiDAR</span><span>IMU</span><span>Path Planning</span></div>
+        <div class="project-links"><a href="https://github.com/kiki101robo/Mazerunner_Bot" target="_blank" rel="noopener" class="project-link">GitHub →</a></div>
+      </article>
+      <article class="project-card">
+        <h3>UAV Collision Avoidance</h3>
+        <p>Python simulation of UAV motion, collision detection, and avoidance logic with a documented package structure and tests.</p>
+        <div class="project-stack"><span>Python</span><span>UAV Simulation</span><span>Collision Logic</span></div>
+        <div class="project-links"><a href="https://github.com/kiki101robo/uav-collision-avoidance" target="_blank" rel="noopener" class="project-link">GitHub →</a></div>
+      </article>
+    </div>
 
+    <h3 class="project-group-title">Selected perception</h3>
+    <div class="project-grid compact-grid">
       <article class="project-card">
         <h3>Structure From Motion</h3>
-        <div class="project-video" data-video=""></div>
-        <p>3D reconstruction from 2D images using OpenCV, with point cloud visualization of the
-        recovered scene geometry.</p>
+        <p>3D reconstruction from 2D images using OpenCV, with point-cloud visualization of recovered scene geometry.</p>
         <div class="project-stack"><span>Python</span><span>OpenCV</span><span>3D Vision</span></div>
-        <div class="project-links">
-          <a href="https://github.com/kiki101robo/Structure_From_Motion" target="_blank" rel="noopener" class="project-link">GitHub →</a>
-        </div>
+        <div class="project-links"><a href="https://github.com/kiki101robo/Structure_From_Motion" target="_blank" rel="noopener" class="project-link">GitHub →</a></div>
       </article>
-
-      <article class="project-card">
-        <h3>STM32 Bare-Metal Bootloader</h3>
-        <div class="project-video" data-video=""></div>
-        <p>Custom bare-metal bootloader for STM32F4 with linker-script-defined memory regions,
-        jump-to-application logic, and a multi-slot firmware system selectable over UART.</p>
-        <div class="project-stack"><span>C</span><span>STM32F4</span><span>Bootloader</span><span>UART</span></div>
-        <div class="project-links">
-          <a href="https://github.com/kiki101robo/stm32-baremetal-bootloader" target="_blank" rel="noopener" class="project-link">GitHub →</a>
-        </div>
-      </article>
-
     </div>
-  </section>
-
-  <!-- ALL REPOS (auto-pulled live from GitHub) -->
-  <section class="section" id="repos">
-    <h2 class="section-title"><span class="num">04</span> All Repositories</h2>
-    <p class="section-sub">Pulled live from <a href="https://github.com/kiki101robo" target="_blank" rel="noopener">github.com/kiki101robo</a> — updates automatically as new repos are pushed.</p>
-    <div id="repoStatus" class="repo-status">Loading repositories…</div>
-    <div id="repoGrid" class="repo-grid"></div>
+    <p class="all-work-link"><a href="https://github.com/kiki101robo?tab=repositories" target="_blank" rel="noopener">View all repositories on GitHub →</a></p>
   </section>
 
   <!-- CONTACT -->
   <section class="section" id="contact">
-    <h2 class="section-title"><span class="num">05</span> Contact</h2>
+    <h2 class="section-title"><span class="num">04</span> Contact</h2>
     <div class="contact-box">
       <p>Open to full-time embedded and firmware engineering roles — always happy to talk robotics.</p>
       <div class="contact-links">
